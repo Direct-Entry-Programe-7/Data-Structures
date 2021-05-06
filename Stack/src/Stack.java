@@ -7,14 +7,8 @@ public class Stack {
         this.size = size;
         this.array = new int[size];
 
-
-
-
-
-
-
-
-
-
+    }
+    public  void  push (int number) {
+        if ()
     }
 }
