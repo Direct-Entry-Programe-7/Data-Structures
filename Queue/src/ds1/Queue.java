@@ -32,8 +32,15 @@ public class Queue {
         }
         queue_numbers = temp;
     }
-    public boolean empty(){return false;}
-    public int peek(){return 0;}
+    public boolean empty(){
+        return queue_numbers == null;
+    }
+    public int peek(){
+        if(empty()){
+            System.out.println("Queue is empty");
+        }
+        return queue_numbers[queue_numbers.length - 1];
+    }
     public void clear(){}
     public void print(){
         System.out.println(Arrays.toString(queue_numbers));
@@ -41,3 +48,31 @@ public class Queue {
     public boolean contains(int numbers){return false;}
     public int size(){return 0;}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
