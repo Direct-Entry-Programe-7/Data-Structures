@@ -2,14 +2,21 @@ package ds;
 
 public class Stack {
 
+    private int[] numbers;
+
     public void push(int number){
+        if(numbers == null){
+           numbers = new int[1];
+           numbers[0] = number;
+        }
+
 
     }
     public void pop(){
 
     }
     public  boolean empty(){
-        return false;
+        return numbers == null;
 
     }
     public int peek(){
