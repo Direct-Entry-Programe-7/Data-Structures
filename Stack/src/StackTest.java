@@ -13,9 +13,16 @@ public class StackTest {
         stack.push(60);
         stack.push(70);
         stack.push(80);
-        stack.print();
+        System.out.println(stack.size());
         stack.pop();
+        System.out.println(stack.size());
+        System.out.println(stack.peek());
+        stack.clear();
+        stack.push(190);
+        stack.push(160);
         stack.print();
+        System.out.println(stack.contains(190));
+
 
     }
 
