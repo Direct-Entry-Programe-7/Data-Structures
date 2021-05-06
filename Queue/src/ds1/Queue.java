@@ -21,7 +21,17 @@ public class Queue {
         }
 
     }
-    public void dequeue(){}
+    public void dequeue(){
+        if(queue_numbers == null) {
+            System.err.println("No item to dequeue from the Queue");
+            return;
+        }
+        int[] temp = new int[queue_numbers.length -1 ];
+        for (int i = 0; i < temp.length; i++) {
+            temp[i] = queue_numbers[i];
+        }
+        queue_numbers = temp;
+    }
     public boolean empty(){return false;}
     public int peek(){return 0;}
     public void clear(){}

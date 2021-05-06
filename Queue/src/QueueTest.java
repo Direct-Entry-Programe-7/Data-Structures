@@ -3,9 +3,11 @@ import ds1.Queue;
 public class QueueTest {
     public static void main(String[] args) {
         Queue queue = new Queue();
-        queue.enqueue(12);
-        queue.enqueue(23);
-        queue.enqueue(22);
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.print();
+        queue.dequeue();
         queue.print();
     }
 }
