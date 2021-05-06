@@ -54,7 +54,9 @@ public class Queue {
             }
         return false;
     }
-    public int size(){return 0;}
+    public int size(){
+        return queue_numbers == null ? 0 : queue_numbers.length;
+    }
 }
 
 
