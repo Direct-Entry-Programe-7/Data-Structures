@@ -41,11 +41,19 @@ public class Queue {
         }
         return queue_numbers[queue_numbers.length - 1];
     }
-    public void clear(){}
+    public void clear(){
+        queue_numbers = null;
+    }
     public void print(){
         System.out.println(Arrays.toString(queue_numbers));
     }
-    public boolean contains(int numbers){return false;}
+    public boolean contains(int numbers){
+        for (int i = 0; i < queue_numbers.length; i++) {
+            if(queue_numbers[i] == numbers);
+                return true;
+            }
+        return false;
+    }
     public int size(){return 0;}
 }
 
