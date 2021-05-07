@@ -14,6 +14,7 @@ public class QueueTest {
         System.out.println(queue.contains(200));
         System.out.println(queue.size());
         queue.clear();
+        System.out.println(queue.peek());
         queue.print();
 
 

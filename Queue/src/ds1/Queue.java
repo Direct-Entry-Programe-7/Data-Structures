@@ -14,13 +14,13 @@ public class Queue {
             int[] temp = new int[queue_numbers.length + 1];
             for (int i = 0; i < queue_numbers.length; i++) {
                 temp[i] = queue_numbers[i];
-
             }
             temp[temp.length - 1] = number;
             queue_numbers = temp;
         }
 
     }
+
     public void dequeue(){
         if(queue_numbers == null) {
             System.err.println("No item to dequeue from the Queue");
@@ -32,21 +32,34 @@ public class Queue {
         }
         queue_numbers = temp;
     }
+
     public boolean empty(){
         return queue_numbers == null;
     }
+
     public int peek(){
         if(empty()){
-            System.out.println("Queue is empty");
+            throw new RuntimeException("Queue is empty");
         }
         return queue_numbers[queue_numbers.length - 1];
     }
+
     public void clear(){
         queue_numbers = null;
     }
+
     public void print(){
-        System.out.println(Arrays.toString(queue_numbers));
+        if(empty()){
+            System.out.println("[]");
+            return;
+        }
+        System.out.print("[");
+        for (int i = queue_numbers.length - 1; i >= 0 ; i--) {
+            System.out.print(queue_numbers[i] + ",");
+        }
+        System.out.println("\b ]");
     }
+
     public boolean contains(int numbers){
         for (int i = 0; i < queue_numbers.length; i++) {
             if(queue_numbers[i] == numbers);
@@ -54,6 +67,7 @@ public class Queue {
             }
         return false;
     }
+
     public int size(){
         return queue_numbers == null ? 0 : queue_numbers.length;
     }
