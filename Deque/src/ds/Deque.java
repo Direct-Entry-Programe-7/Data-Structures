@@ -22,8 +22,18 @@ public class Deque extends Queue {
 
     }
     public void front_dequeue(int number){
+        if(numbers == null) {
+            System.err.println("No item to dequeue from the deque");
+            return;
+        }
+        int[] temp = new int[numbers.length -1 ];
+        for (int i = 0; i < temp.length; i++) {
+            temp[i] = numbers[i];
+        }
+        numbers = temp;
+    }
 
     }
 
 
-}
+
