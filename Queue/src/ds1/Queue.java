@@ -4,48 +4,48 @@ import java.util.Arrays;
 
 public class Queue {
 
-    private int[] queue_numbers;
+    protected int[] numbers;
 
     public void enqueue(int number){
-        if(queue_numbers == null){
-            queue_numbers = new int[1];
-            queue_numbers[0] = number;
+        if(numbers == null){
+            numbers = new int[1];
+            numbers[0] = number;
         }else{
-            int[] temp = new int[queue_numbers.length + 1];
-            for (int i = 0; i < queue_numbers.length; i++) {
-                temp[i] = queue_numbers[i];
+            int[] temp = new int[numbers.length + 1];
+            for (int i = 0; i <numbers.length; i++) {
+                temp[i] = numbers[i];
             }
             temp[temp.length - 1] = number;
-            queue_numbers = temp;
+            numbers = temp;
         }
 
     }
 
     public void dequeue(){
-        if(queue_numbers == null) {
+        if ( numbers == null) {
             System.err.println("No item to dequeue from the Queue");
             return;
         }
-        int[] temp = new int[queue_numbers.length -1 ];
+        int[] temp = new int[numbers.length -1 ];
         for (int i = 0; i < temp.length; i++) {
-            temp[i] = queue_numbers[i];
+            temp[i] = numbers[i];
         }
-        queue_numbers = temp;
+        numbers = temp;
     }
 
     public boolean empty(){
-        return queue_numbers == null;
+        return numbers == null;
     }
 
     public int peek(){
         if(empty()){
             throw new RuntimeException("Queue is empty");
         }
-        return queue_numbers[queue_numbers.length - 1];
+        return numbers[numbers.length - 1];
     }
 
     public void clear(){
-        queue_numbers = null;
+        numbers = null;
     }
 
     public void print(){
@@ -54,21 +54,21 @@ public class Queue {
             return;
         }
         System.out.print("[");
-        for (int i = queue_numbers.length - 1; i >= 0 ; i--) {
-            System.out.print(queue_numbers[i] + ",");
+        for (int i = numbers.length - 1; i >= 0 ; i--) {
+            System.out.print(numbers[i] + ",");
         }
         System.out.println("\b ]");
     }
 
-    public boolean contains(int numbers){
-        for (int i = 0; i < queue_numbers.length; i++) {
-            if(queue_numbers[i] == numbers);
+    public boolean contains(int number){
+        for (int i = 0; i < numbers.length; i++) {
+            if( numbers[i] == number);
                 return true;
             }
         return false;
     }
 
     public int size(){
-        return queue_numbers == null ? 0 : queue_numbers.length;
+        return numbers == null ? 0 : numbers.length;
     }
 }
