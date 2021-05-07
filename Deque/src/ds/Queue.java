@@ -1,6 +1,4 @@
-package ds1;
-
-import java.util.Arrays;
+package ds;
 
 public class Queue {
 
