@@ -1,10 +1,23 @@
 package ds;
 
+import java.util.Arrays;
+
 public class DynamicArray {
 
     private  int[] numbers;
 
     public void add(int number){
+        if(numbers == null){
+            numbers = new int[1];
+            numbers[0] = number;
+        }else{
+            int[] temp = new int[numbers.length + 1];
+            for (int i = 0; i <numbers.length; i++) {
+                temp[i] = numbers[i];
+            }
+            temp[temp.length - 1] = number;
+            numbers = temp;
+        }
 
     }
 
@@ -25,6 +38,7 @@ public class DynamicArray {
     }
 
     public void print(){
+        System.out.println(Arrays.toString(numbers));
 
     }
 
