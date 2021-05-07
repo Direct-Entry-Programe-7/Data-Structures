@@ -22,11 +22,18 @@ public class DynamicArray {
     }
 
     public void add(int index, int number){
+        
+        int[] temp = new int[numbers.length + 1];
+        for (int i = 0; i < ; i++) {
+            
+        }
+        
+
 
     }
 
     public boolean empty(){
-        return true;
+        return numbers == null;
     }
 
     public void remove(int index){
