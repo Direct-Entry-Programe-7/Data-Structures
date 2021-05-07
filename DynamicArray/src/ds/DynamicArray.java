@@ -42,9 +42,21 @@ public class DynamicArray {
 
 
     public void remove(int index){
-        
-
-
+        if (index >= size() || index < 0){
+            throw new RuntimeException("Invalid array index");
+        }  if (size() -1 == 0){
+               clear(); return;
+        }
+        int[] temp = new int[size() - 1];
+        for (int i = 0; i < temp.length; i++) {
+            if ( i < index){
+                temp[i] = numbers[i];
+            }
+            else if (i >= index){
+                temp[i] = numbers[i + 1];
+            }
+        }
+        numbers = temp;
     }
 
     public int get(int index){
