@@ -24,7 +24,11 @@ public class DynamicArray {
     public void add(int index, int number){
         
         int[] temp = new int[numbers.length + 1];
-        for (int i = 0; i < ; i++) {
+        for (int i = 0; i < temp.length ; i++) {
+            if (i == index){
+                temp[i] = number;
+            }
+            else{temp[i] = numbers[]
             
         }
         
