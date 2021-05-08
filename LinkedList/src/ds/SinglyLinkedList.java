@@ -1,37 +1,47 @@
 package ds;
 
-import java.util.Arrays;
-
 public class SinglyLinkedList {
 
-    Node head;
-
-    static class Node {
+    class Node {
         int data;
         Node next;
 
-        Node(int d) {
-            data = d;
+        public Node(int data) {
+            data = data;
             next = null;
         }
     }
-    public void add(SinglyLinkedList element, int data){
+
+    Node head = null;
+    Node tail = null;
+
+    public void add(int data){
 
         Node newNode = new Node(data);
-        newNode.next = null;
 
-        if(element.head == null){
-            element.head = newNode;
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        }else {
+            tail.next = newNode;
+            tail = newNode;
         }
 
+        }
 
-
-    }
     public void add(int index, int data){}
     public void remove(int index){}
     public int get(int index){return 0;}
+
     public void print(){
-        System.out.println(head);
+        Node Current = head;
+
+        if(head == null){
+            System.out.println("List is Empty");
+            return;
+        }
+
+
     }
     public void clear(){}
     public int size(){return 0;}
